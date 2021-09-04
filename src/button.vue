@@ -1,40 +1,44 @@
 <template>
-  <button class="g-button" :class="{ [`icon-${position}`]: true }">
-    <g-icon  class="icon" v-if="icon" :name="icon"></g-icon>
-    <g-icon class="loading" name="loading"></g-icon>
+  <button
+    class="g-button"
+    :class="{ [`icon-${position}`]: true }"
+    @click="$emit('click')"
+  >
+    <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+    <g-icon class="loading icon" name="loading" v-if="loading"></g-icon>
     <div class="content">
-      <slot/>
+      <slot />
     </div>
   </button>
 </template>
 
 <script>
 export default {
-
   props: {
     icon: {},
+    loading: {
+      type: Boolean,
+      default: false,
+    },
     position: {
       type: String,
       default: "left",
-    //   validator(value) {
-    //     if (value !== "left" && value !== "right") {
-    //       return false;
-    //     } else {
-    //       return true;
-    //     }
-    //   },
-    validaor(value) {
-        return value === "left" || value === "right"
-    }
+      validaor(value) {
+        return value === "left" || value === "right";
+      },
     },
   },
 };
 </script>
 
 <style lang="scss">
-@keyframes spin{
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .g-button {
   font-size: var(--font-size);
@@ -73,8 +77,8 @@ export default {
       margin-left: 0.1em;
     }
   }
-  .loading{
-      animation: spin 1s infinite linear;
+  .loading {
+    animation: spin 1s infinite linear;
   }
 }
 </style>
