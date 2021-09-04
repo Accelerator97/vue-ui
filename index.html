@@ -12,6 +12,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         html {
             --button-height: 32px;
             --font-size: 14px;
@@ -22,19 +23,40 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
-        #app{
+
+        #app {
             margin: 20px;
         }
-        body{
+
+        body {
             font-size: var(--font-size);
         }
     </style>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
     <div id="app">
-        <g-button></g-button>
+        <g-button icon="set">
+            按钮
+        </g-button>
+        <g-button icon="set" position="left" >
+            按钮
+        </g-button>
+        <g-button icon="set" position="right">
+            按钮
+        </g-button>
     </div>
     <script src="./src/app.js"></script>
+    <script src="//at.alicdn.com/t/font_2790149_br44qdv91lc.js"></script>
 </body>
 
 </html>
