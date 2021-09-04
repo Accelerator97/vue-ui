@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Accelerator97/vue-ui#readme",
   "dependencies": {
     "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   }
 }
