@@ -70,6 +70,7 @@ export default {
   &.icon-right {
     > .content {
       order: 1;
+      margin-right:0.1em;
     }
     > .icon {
       order: 2;
