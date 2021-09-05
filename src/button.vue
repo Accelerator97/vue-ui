@@ -13,7 +13,11 @@
 </template>
 
 <script>
+import Icon from "./icon";
 export default {
+  components: {
+    "g-icon": Icon,
+  },
   props: {
     icon: {},
     loading: {
@@ -70,7 +74,7 @@ export default {
   &.icon-right {
     > .content {
       order: 1;
-      margin-right:0.1em;
+      margin-right: 0.1em;
     }
     > .icon {
       order: 2;
