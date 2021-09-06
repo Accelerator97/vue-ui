@@ -10,10 +10,13 @@ Vue.component('g-button-group', ButtonGroup)
 Vue.component('g-input', Input)
 new Vue({
     el: '#app',
-    data() {
-        return {
-            loading1: false,
-            loading2: true,
+    data: {
+        loading1: false,
+        loading2: true,
+    },
+    methods: {
+        inputChange(e) {
+            console.log(e)
         }
     }
 })

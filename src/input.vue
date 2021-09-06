@@ -1,17 +1,28 @@
 <template>
-  <div class="wrapper" :class="{'error':error}">
-    <input :value="value" type="text" class="g-input" :disabled="disabled" :readonly="readonly"/>
+  <div class="wrapper" :class="{ error: error }">
+    <input
+      :value="value"
+      type="text"
+      class="g-input"
+      :disabled="disabled"
+      :readonly="readonly"
+      @change="$emit('change', $event)"
+      @input="$emit('input', $event)"
+      @focus="$emit('focus', $event)"
+      @blur="$emit('blur', $event)"
+    />
+    <!-- JS里的input原本就有change事件，$event就是浏览器里触发的原生change事件对象，通过自定义的change事件发送出去，index.html中@change="inputChange"，监听自定义的change事件，然后触发inputChange -->
     <template v-if="error">
-       <g-icon name="error" class="icon-error"></g-icon>
-       <span class="errorMessage">姓名至少需要两个字</span>
+      <g-icon name="error" class="icon-error"></g-icon>
+      <span class="errorMessage">{{ error }}</span>
     </template>
   </div>
 </template>
 
 <script>
-import Icon from "./icon.vue"
+import Icon from "./icon.vue";
 export default {
- components:{'g-icon':Icon},
+  components: { "g-icon": Icon },
   name: "gulu-input",
   props: {
     value: {
@@ -21,18 +32,18 @@ export default {
       type: Boolean,
       default: false,
     },
-    readonly:{
-        type:Boolean,
-        default:false
+    readonly: {
+      type: Boolean,
+      default: false,
     },
-    error:{
-        type:String
-    }
+    error: {
+      type: String,
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 // html {
 //     --button-height: 32px;
 //     --font-size: 14px;
@@ -49,12 +60,14 @@ $border-color-hover: #666;
 $border-radius: 4px;
 $font-size: 12px;
 $box-shadow-color: rgba(0, 0, 0, 0.5);
-$red:#F1453D;
+$red: #f1453d;
 .wrapper {
   font-size: $font-size;
   display: inline-flex;
   align-items: center;
-  > :not(:last-child){margin-right: .5em;}
+  > :not(:last-child) {
+    margin-right: 0.5em;
+  }
   > .g-input {
     height: 32px;
     border: 1px solid $border-color;
@@ -68,17 +81,18 @@ $red:#F1453D;
       box-shadow: inset 0 1px 3px $box-shadow-color;
       outline: none;
     }
-    &[disabled],&[readonly] {
+    &[disabled],
+    &[readonly] {
       border-color: #bbb;
       color: #bbb;
       cursor: not-allowed;
     }
   }
-  .icon-error{
-      fill:$red
+  .icon-error {
+    fill: $red;
   }
-  .errorMessage{
-      color: red;
+  .errorMessage {
+    color: red;
   }
 }
 </style>
