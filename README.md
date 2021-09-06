@@ -33,13 +33,14 @@
  }
  ```
  IE 15 及以上的浏览器支持此样式
- 
+
 2. 安装
  ```
  npm i --save ben-test-1
  ```
 
 3. 引入
+```
 import {Button,ButtonGroup,Icon} from 'ben-test-1'
 export default {
   name: 'App',
@@ -49,7 +50,7 @@ export default {
     'g-icon':Icon
   }
 }
-
+```
 
 
 ## 文档
