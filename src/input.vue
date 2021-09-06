@@ -6,10 +6,10 @@
       class="g-input"
       :disabled="disabled"
       :readonly="readonly"
-      @change="$emit('change', $event)"
-      @input="$emit('input', $event)"
-      @focus="$emit('focus', $event)"
-      @blur="$emit('blur', $event)"
+      @change="$emit('change', $event.target.value)"
+      @input="$emit('input', $event.target.value)"
+      @focus="$emit('focus', $event.target.value)"
+      @blur="$emit('blur', $event.target.value)"
     />
     <!-- JS里的input原本就有change事件，$event就是浏览器里触发的原生change事件对象，通过自定义的change事件发送出去，index.html中@change="inputChange"，监听自定义的change事件，然后触发inputChange -->
     <template v-if="error">
