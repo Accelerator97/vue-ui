@@ -41,6 +41,22 @@
 
 <body>
     <div id="app">
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>1</g-col>
+        </g-row>
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+        </g-row>
+        <g-row>
+            <g-col span="21">1</g-col>
+            <g-col span="1">2</g-col>
+            <g-col span="1">3</g-col>
+            <g-col span="1">4</g-col>
+        </g-row>
+        <hr>
         <div class="box">
             <g-button :loading="loading1" @click="loading1 = !loading1">
                 按钮
@@ -71,7 +87,7 @@
             <button @click="message+=1">+1</button>
         </div>
         
- 
+     
     </div>
     <script src="./src/app.js"></script>
 </body>
