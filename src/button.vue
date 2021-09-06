@@ -15,6 +15,7 @@
 <script>
 import Icon from "./icon";
 export default {
+  name:"gulu-button",
   components: {
     "g-icon": Icon,
   },

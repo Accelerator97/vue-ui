@@ -24,6 +24,7 @@
   "dependencies": {
     "chai-spies": "^1.0.0",
     "git-open": "^2.1.0",
+    "icon.vue": "^0.1.5",
     "postcss": "^8.3.6",
     "sass": "^1.39.0",
     "vue": "^2.6.14",
