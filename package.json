@@ -1,8 +1,8 @@
 {
-  "name": "gulu",
-  "version": "0.0.1",
+  "name": "ben-test-1",
+  "version": "0.0.2",
   "description": "UI框架",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Accelerator97/vue-ui#readme",
   "dependencies": {
     "chai-spies": "^1.0.0",
+    "git-open": "^2.1.0",
     "postcss": "^8.3.6",
     "sass": "^1.39.0",
     "vue": "^2.6.14",
