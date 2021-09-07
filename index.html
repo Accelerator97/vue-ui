@@ -39,8 +39,16 @@
     </style>
 </head>
 
+<style>
+    .demo{
+        background-color: #ddd;
+        border: 1px solid #666;
+        height: 100px;
+    }
+</style>
+
 <body>
-    <div id="app">
+    <!-- <div id="app">
         <g-row gutter="20">
             <g-col span="24" :ipad="{span:8}" :narrow-pc="{span:4}" :pc="{span:2}" :wide-pc="{span:1}">1</g-col>
             <g-col span="24" :ipad="{span:16}" :narrow-pc="{span:20}" :pc="{span:22}" :wide-pc="{span:23}">1
@@ -94,6 +102,28 @@
         </div>
 
 
+    </div> -->
+    <div id="app">
+        <g-row>
+            <g-col span="24" :narrow-pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+            <g-col span="24" :narrow-pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+            <g-col span="24" :narrow-pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+            <g-col span="24" :narrow-pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+            <g-col span="24" :narrow-pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+            <g-col span="24" :narrow-pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+        </g-row>
     </div>
     <script src="./src/app.js"></script>
 </body>
