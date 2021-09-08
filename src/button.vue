@@ -1,7 +1,7 @@
 <template>
   <button
     class="g-button"
-    :class="{ [`icon-${position}`]: true }"
+    :class="{ [`icon-${iconPosition}`]: true }"
     @click="$emit('click')"
   >
     <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
@@ -25,7 +25,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    position: {
+    iconPosition: {
       type: String,
       default: "left",
       validaor(value) {
