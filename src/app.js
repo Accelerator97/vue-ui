@@ -36,6 +36,7 @@ new Vue({
     created(){
         this.$toast('nihao',{
             enableHTML:false,
+            position:'middle',
             closeButton:{
                 text:'guanbi',
                 callback(){
@@ -46,7 +47,7 @@ new Vue({
     },
     methods: {
         showToast(){
-            this.$toast('我是Message')
+            // this.$toast('我是Message')
             // console.log('nihao');
         } 
     }
