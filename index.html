@@ -32,26 +32,9 @@
 
 
 <body>
-    <style>
-        .demo{
-            /* background-color: #ddd; */
-            border: 1px solid #666;
-            /* min-height: 100px; */
-        }
-    </style>
-    
     <div id="app">
-        <g-layout style="height: 100vh;" >
-            <g-header class="demo" >header</g-header>
-             <g-layout>
-                <g-sider class="demo">sider</g-sider>  
-                <g-content class="demo">content</g-content>
-             </g-layout>
-             <g-footer class="demo">footer</g-footer>
-   
-        </g-layout>
-    </div> 
-
+        <button @click="showToast">点我显示toast</button>
+    </div>
     <script src="./src/app.js"></script>
 </body>
 
