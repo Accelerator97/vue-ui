@@ -33,11 +33,22 @@ new Vue({
         loading1: false,
         loading2: true,
     },
+    created(){
+        this.$toast('nihao',{
+            enableHTML:false,
+            closeButton:{
+                text:'guanbi',
+                callback(){
+                    console.log('zhidaole');
+                }
+            }
+        })
+    },
     methods: {
         showToast(){
-            this.$toast('我是message')
+            this.$toast('我是Message')
             // console.log('nihao');
-        }
+        } 
     }
 })
 
