@@ -1,6 +1,7 @@
 <template>
     <div class="g-tabs-item" @click="xxx" :class="classes">
         <slot></slot>
+        <div class="g-tabs-line" ref="line"></div>
     </div>
 </template>
 
@@ -50,6 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
+$tabs-blue:blue;
 .g-tabs-item{
     padding: 0 1em;
     flex-shrink: 0;
@@ -59,6 +61,8 @@ export default {
     cursor: pointer;
     &.active{
         background: red;
+        color:$tabs-blue;
+        font-weight: bold;
     }
 }
 </style>
