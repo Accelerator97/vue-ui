@@ -34,22 +34,45 @@ new Vue({
         loading2: true,
     },
     created(){
-        this.$toast('nihao',{
-            enableHTML:false,
-            position:'middle',
-            closeButton:{
-                text:'guanbi',
-                callback(){
-                    console.log('zhidaole');
-                }
-            }
-        })
+
     },
     methods: {
-        showToast(){
-            // this.$toast('我是Message')
-            // console.log('nihao');
-        } 
+        showToast1(){
+            this.$toast(`你的智商：${parseInt(Math.random()*100)}`,{
+                enableHTML:false,
+                position:'middle',
+                closeButton:{
+                    text:'关闭',
+                    callback(){
+                        console.log('zhidaole');
+                    }
+                }
+            }) 
+        },
+        showToast2(){
+            this.$toast(`你的智商：${parseInt(Math.random()*100)}`,{
+                enableHTML:false,
+                position:'top',
+                closeButton:{
+                    text:'关闭',
+                    callback(){
+                        console.log('zhidaole');
+                    }
+                }
+            }) 
+        },
+        showToast3(){
+            this.$toast(`你的智商：${parseInt(Math.random()*100)}`,{
+                enableHTML:false,
+                position:'bottom',
+                closeButton:{
+                    text:'关闭',
+                    callback(){
+                        console.log('zhidaole');
+                    }
+                }
+            }) 
+        },
     }
 })
 
