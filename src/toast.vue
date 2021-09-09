@@ -58,10 +58,9 @@ export default {
     this.execautoClose();
     this.updateCss();
     // console.log(this.autoCloseDelay)
-    setTimeout(() => {
-        console.log(this.$refs.toast.getBoundingClientRect().height);
-    }, 2000);
-
+    // setTimeout(() => {
+    //     console.log(this.$refs.toast.getBoundingClientRect().height);
+    // }, 2000);
   },
   methods: {
     updateCss() {
