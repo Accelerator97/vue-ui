@@ -33,19 +33,13 @@ new Vue({
         loading1: false,
         loading2: true,
     },
-    created(){
-
-    },
     methods: {
         showToast1(){
-            this.$toast(`你的智商：${parseInt(Math.random()*100)}`,{
+            this.$toast(`你的aaaaaaaaaaaaaa智商：${parseInt(Math.random()*100)}`,{
                 enableHTML:false,
                 position:'middle',
                 closeButton:{
                     text:'关闭',
-                    callback(){
-                        console.log('zhidaole');
-                    }
                 }
             }) 
         },
@@ -55,9 +49,6 @@ new Vue({
                 position:'top',
                 closeButton:{
                     text:'关闭',
-                    callback(){
-                        console.log('zhidaole');
-                    }
                 }
             }) 
         },
@@ -66,10 +57,7 @@ new Vue({
                 enableHTML:false,
                 position:'bottom',
                 closeButton:{
-                    text:'关闭',
-                    callback(){
-                        console.log('zhidaole');
-                    }
+                    text:'关闭'
                 }
             }) 
         },

@@ -20,12 +20,11 @@ export default {
   name: "gulu-toast",
   props: {
     autoClose: {
-      type: Boolean,
-      default: true,
-    },
-    autoCloseDelay: {
-      type: Number,
-      default: 50,
+      type: [Boolean, Number],
+      default: false,
+      validator(value) {
+        return value === false || typeof value === "number";
+      },
     },
     closeButton: {
       type: Object,
@@ -55,12 +54,14 @@ export default {
       };
     },
   },
-  created() {
-    console.log(this.closeButton);
-  },
   mounted() {
     this.execautoClose();
     this.updateCss();
+    // console.log(this.autoCloseDelay)
+    setTimeout(() => {
+        console.log(this.$refs.toast.getBoundingClientRect().height);
+    }, 2000);
+
   },
   methods: {
     updateCss() {
@@ -74,7 +75,7 @@ export default {
       if (this.autoClose) {
         setTimeout(() => {
           this.close();
-        }, this.autoCloseDelay * 1000);
+        }, this.autoClose * 1000);
       }
     },
     close() {
@@ -134,7 +135,7 @@ $toast-background: rgba(0, 0, 0, 0.75);
     .g-toast {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      animation: slide-down $animation-duration
+      animation: slide-down $animation-duration;
     }
   }
   &.position-bottom {
@@ -142,17 +143,16 @@ $toast-background: rgba(0, 0, 0, 0.75);
     .g-toast {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      animation: slide-up $animation-duration
+      animation: slide-up $animation-duration;
     }
   }
   &.position-middle {
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    animation: fade-in $animation-duration
+    animation: fade-in $animation-duration;
   }
 }
 .g-toast {
-  animation: fade-in 1s;
   font-size: $font-size;
   min-height: $toast-min-height;
   line-height: 1.8;
@@ -169,8 +169,10 @@ $toast-background: rgba(0, 0, 0, 0.75);
   .g-close {
     padding-left: 16px;
     flex-shrink: 0;
+    // text-align: center;
   }
   .g-line {
+    flex-shrink: 0;
     height: 100%;
     border: 1px solid #666;
     margin-left: 16px;
