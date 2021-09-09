@@ -46,6 +46,9 @@ new Vue({
         loading2: true,
         selectedTabs:'sports'
     },
+    mounted(){
+        console.log(this.selectedTabs)
+    }
 })
 
 

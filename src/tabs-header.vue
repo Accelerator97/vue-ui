@@ -12,17 +12,19 @@
 export default {
   name: "gulu-tabs-header",
   inject: ["eventBus"],
-    created() {
-      this.eventBus.$on("update:selected", (name,vm) => {
-        console.log(vm.$el);
-      });
-    },
+  mounted() {
+    this.eventBus.$on("update:selected", (name, vm) => {
+      let { width, height, top, left } = vm.$el.getBoundingClientRect();
+      this.$refs.line.style.width = `${width}px`
+      this.$refs.line.style.left = `${left}px`
+    });
+  },
 };
 </script>
 
 <style lang="scss">
 $tabs-height: 40px;
-$tabs-blue:blue;
+$tabs-blue: blue;
 .g-tabs-header {
   display: flex;
   height: $tabs-height;
@@ -33,11 +35,11 @@ $tabs-blue:blue;
   .actions-wrapper {
     margin-left: auto;
   }
-  >.g-tabs-line{
-      position: absolute;
-      bottom: 0;
-      border-bottom: 1px solid $tabs-blue;
-      width: 100px;
+  > .g-tabs-line {
+    position: absolute;
+    bottom: 0;
+    border-bottom: 1px solid $tabs-blue;
+    width: 100px;
   }
 }
 </style>
