@@ -33,7 +33,7 @@
 
 <body>
     <div id="app">
-      <g-tabs  selected="selectedTabs" @update:selected="selectedTabs = $event">
+      <g-tabs  :selected="selectedTabs"  @update:selected="selectedTabs = $event">
           <g-tabs-header>
               <template slot="actions">
                   <button>

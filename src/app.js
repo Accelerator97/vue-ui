@@ -45,35 +45,9 @@ new Vue({
         loading2: true,
         selectedTabs:'sports'
     },
-    methods: {
-        showToast1(){
-            this.$toast(`你的aaaaaaaaaaaaaa智商：${parseInt(Math.random()*100)}`,{
-                enableHTML:false,
-                position:'middle',
-                closeButton:{
-                    text:'关闭',
-                }
-            }) 
-        },
-        showToast2(){
-            this.$toast(`你的智商：${parseInt(Math.random()*100)}`,{
-                enableHTML:false,
-                position:'top',
-                closeButton:{
-                    text:'关闭',
-                }
-            }) 
-        },
-        showToast3(){
-            this.$toast(`你的智商：${parseInt(Math.random()*100)}`,{
-                enableHTML:false,
-                position:'bottom',
-                closeButton:{
-                    text:'关闭'
-                }
-            }) 
-        },
-    }
+    mounted(){
+        this.$eventBus
+    },
 })
 
 

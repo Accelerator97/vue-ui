@@ -32,7 +32,19 @@ export default {
     };
   },
   mounted() {
-    this.eventBus.$emit("update:selected", this.selected);
+    this.$children.forEach((vm) => {
+      if (vm.$options.name === "gulu-tabs-header") {
+        //子元素为tabs-header
+        vm.$children.forEach((childVm) => {
+          if (
+            childVm.$options.name === "gulu-tabs-item" && //孙元素为tabs-item
+            childVm.name === this.selected //孙元素被选中
+          ) {
+            this.eventBus.$emit("update:selected", this.selected, childVm);
+          }
+        });
+      }
+    });
   },
 };
 </script>
