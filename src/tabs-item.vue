@@ -1,5 +1,5 @@
 <template>
-  <div class="g-tabs-item" @click="onClick" :class="classes">
+  <div class="g-tabs-item" @click="onClick" :class="classes" :data-name="name">
     <slot></slot>
   </div>
 </template>
@@ -28,28 +28,32 @@ export default {
     classes() {
       return {
         active: this.active,
+        disabled: this.disabled, //动态绑定样式
       };
     },
   },
   created() {
-    this.eventBus.$on("update:selected", (name) => {
-      if (name === this.name) {
-        this.active = true;
-      } else {
-        this.active = false;
-      }
-    });
+    if (this.eventBus) {
+      this.eventBus.$on("update:selected", (name) => {
+        return this.active = name === this.name
+      });
+    }
   },
   methods: {
     onClick() {
-      this.eventBus.$emit("update:selected", this.name, this);
+      if (this.disabled) {
+        return;
+      } //存在disabled直接退出
+      this.eventBus && this.eventBus.$emit("update:selected", this.name, this);
+      this.$emit('click',this)
     },
   },
 };
 </script>
 
 <style lang="scss">
-$tabs-blue:blue;
+$tabs-blue: blue;
+$disable-text-color: #ddd;
 .g-tabs-item {
   padding: 0 1em;
   flex-shrink: 0;
@@ -60,6 +64,11 @@ $tabs-blue:blue;
   &.active {
     color: $tabs-blue;
     font-weight: bold;
+  }
+  &.disabled {
+    //添加disabled对应样式
+    color: $disable-text-color;
+    cursor: not-allowed;
   }
 }
 </style>
