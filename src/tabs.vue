@@ -32,19 +32,6 @@ export default {
     };
   },
   mounted() {
-<<<<<<< HEAD
-    console.log(this.selected)
-    this.$children.forEach((vm) => {
-      if (vm.$options.name === "gulu-tabs-header") {
-        vm.$children.forEach((item) => {
-          if (
-            item.$options.name === "gulu-tabs-item" &&
-            item.name === this.selected
-          ) {
-            console.log(item.$el);
-            this.eventBus.$emit("update:selected", this.selected,item);
-          } 
-=======
     if (this.$children.length === 0) {
       console && console.warn && console.warn('tabs组件只能是tabs-body和tabs-header')
     }
@@ -58,7 +45,6 @@ export default {
           ) {
             this.eventBus.$emit("update:selected", this.selected, childVm);
           }
->>>>>>> tabs
         });
       }
     });
