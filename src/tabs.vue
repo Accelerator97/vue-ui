@@ -31,23 +31,33 @@ export default {
       eventBus: this.eventBus,
     };
   },
-  mounted() {
-    if (this.$children.length === 0) {
-      console && console.warn && console.warn('tabs组件只能是tabs-body和tabs-header')
-    }
-    this.$children.forEach((vm) => {
-      if (vm.$options.name === "gulu-tabs-header") {
-        //子元素为tabs-header
-        vm.$children.forEach((childVm) => {
-          if (
-            childVm.$options.name === "gulu-tabs-item" && //孙元素为tabs-item
-            childVm.name === this.selected //孙元素被选中
-          ) {
-            this.eventBus.$emit("update:selected", this.selected, childVm);
-          }
-        });
+  methods: {
+    checkChildren() {
+      if (this.$children.length === 0) {
+        console &&
+          console.warn &&
+          console.warn("tabs组件只能是tabs-body和tabs-header");
       }
-    });
+    },
+    selectTab() {
+      this.$children.forEach((vm) => {
+        if (vm.$options.name === "gulu-tabs-header") {
+          //子元素为tabs-header
+          vm.$children.forEach((childVm) => {
+            if (
+              childVm.$options.name === "gulu-tabs-item" && //孙元素为tabs-item
+              childVm.name === this.selected //孙元素被选中
+            ) {
+              this.eventBus.$emit("update:selected", this.selected, childVm);
+            }
+          });
+        }
+      });
+    },
+  },
+  mounted() {
+    this.checkChildren();
+    this.selectTab()
   },
 };
 </script>
