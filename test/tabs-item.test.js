@@ -17,7 +17,7 @@ Vue.config.devtools = false
 
 describe('TabsItem', () => {
 
-    it('存在.', () => {
+    it('TbasItem存在', () => {
         expect(TabsItem).to.exist
     })
 
@@ -30,11 +30,12 @@ describe('TabsItem', () => {
         }).$mount()
         expect(vm.$el.getAttribute('data-name')).to.eq('xxx')
     })
+
     it('接受 disabled 属性', () => {
         const Constructor = Vue.extend(TabsItem)
         const vm = new Constructor({
             propsData: {
-                disabled: true,
+                disabled: true
             }
         }).$mount()
         expect(vm.$el.classList.contains('disabled')).to.be.true

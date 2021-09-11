@@ -10,14 +10,14 @@ describe('Toast', () => {
         expect(Toast).to.be.ok
     })
 
-    describe('props', function () {
+    describe('props', ()=>{
         it('接受autoClose', (done) => {
             let div = document.createElement('div')
             document.body.appendChild(div)
             const Constructor = Vue.extend(Toast)
             const vm = new Constructor({
                 propsData: {
-                    autoClose: 1
+                    autoClose: 2
                 }
             }).$mount(div)
             vm.$on('close', () => {
