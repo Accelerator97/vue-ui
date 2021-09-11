@@ -24,7 +24,11 @@ export default {
 
 <style lang="scss">
 $tabs-height: 40px;
+<<<<<<< HEAD
 $tabs-blue: blue;
+=======
+$tabs-blue:blue;
+>>>>>>> tabs
 .g-tabs-header {
   display: flex;
   height: $tabs-height;
@@ -32,6 +36,7 @@ $tabs-blue: blue;
   align-items: center;
   border: 1px solid red;
   position: relative;
+<<<<<<< HEAD
   .actions-wrapper {
     margin-left: auto;
   }
@@ -40,6 +45,17 @@ $tabs-blue: blue;
     bottom: 0;
     border-bottom: 1px solid $tabs-blue;
     width: 100px;
+=======
+  .actions-wrapper{
+      margin-left: auto;
+>>>>>>> tabs
+  }
+  .g-tabs-line {
+    position: absolute;
+    bottom: 0;
+    border-bottom: 1px solid $tabs-blue;
+    width: 100px;
+    transition: all 350ms;
   }
 }
 </style>

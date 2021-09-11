@@ -17,6 +17,7 @@ import TabsHeader from './tabs-header.vue'
 import TabsBody from './tabs-body.vue'
 import TabsItem from './tabs-item.vue'
 import TabsPane from './tabs-pane.vue'
+import Popover from './popover.vue'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -36,8 +37,12 @@ Vue.component('g-tabs-body', TabsBody)
 Vue.component('g-tabs-item', TabsItem)
 Vue.component('g-tabs-pane', TabsPane)
 Vue.component('g-tabs-header', TabsHeader)
+<<<<<<< HEAD
 
 Vue.config.productionTip = false
+=======
+Vue.component('g-popover', Popover)
+>>>>>>> tabs
 
 new Vue({
     el: '#app',
@@ -47,8 +52,13 @@ new Vue({
         selectedTabs:'sports'
     },
     mounted(){
+<<<<<<< HEAD
         console.log(this.selectedTabs)
     }
+=======
+        this.$eventBus
+    },
+>>>>>>> tabs
 })
 
 

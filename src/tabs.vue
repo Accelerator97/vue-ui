@@ -32,6 +32,7 @@ export default {
     };
   },
   mounted() {
+<<<<<<< HEAD
     console.log(this.selected)
     this.$children.forEach((vm) => {
       if (vm.$options.name === "gulu-tabs-header") {
@@ -43,6 +44,21 @@ export default {
             console.log(item.$el);
             this.eventBus.$emit("update:selected", this.selected,item);
           } 
+=======
+    if (this.$children.length === 0) {
+      console && console.warn && console.warn('tabs组件只能是tabs-body和tabs-header')
+    }
+    this.$children.forEach((vm) => {
+      if (vm.$options.name === "gulu-tabs-header") {
+        //子元素为tabs-header
+        vm.$children.forEach((childVm) => {
+          if (
+            childVm.$options.name === "gulu-tabs-item" && //孙元素为tabs-item
+            childVm.name === this.selected //孙元素被选中
+          ) {
+            this.eventBus.$emit("update:selected", this.selected, childVm);
+          }
+>>>>>>> tabs
         });
       }
     });

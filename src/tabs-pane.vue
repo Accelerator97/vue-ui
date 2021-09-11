@@ -39,9 +39,5 @@ export default {
 </script>
 
 <style lang="scss">
-.g-tabs-pane {
-  &.active {
-    background: red;
-  }
-}
+
 </style>
