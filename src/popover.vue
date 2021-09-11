@@ -1,5 +1,5 @@
 <template>
-  <div class="g-popover" @click="onClick" ref="popover">
+  <div class="g-popover" ref="popover">
     <div
       class="g-popover-content-wrapper"
       v-if="popoverVisible"
@@ -22,6 +22,22 @@ export default {
       popoverVisible: false,
     };
   },
+  computed: {
+    openEvent() {
+      if (this.trigger === "click") {
+        return "click";
+      } else {
+        return "mouseenter";
+      }
+    },
+    closeEvent() {
+      if (this.trigger === "click") {
+        return "click";
+      } else {
+        return "mouseenter";
+      }
+    },
+  },
   props: {
     position: {
       type: String,
@@ -30,13 +46,53 @@ export default {
         return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
       },
     },
+    trigger: {
+      type: String,
+      default: 'click',
+      validator(value) {
+        return ['click', 'hover'].indexOf(value) >= 0;
+      },
+    },
+  },
+  computed: {
+    openEvent() {
+      if (this.trigger === "click") {
+        return "click";
+      } else {
+        return "mouseenter";
+      }
+    },
+    closeEvent() {
+      if (this.trigger === "click") {
+        return "click";
+      } else {
+        return "mouseleave";
+      }
+    },
+  },
+  mounted(){
+    if(this.trigger === 'click'){
+      this.$refs.popover.addEventListener('click',this.onClick)
+    } else {
+      this.$refs.popover.addEventListener('mouseenter',this.open)
+      this.$refs.popover.addEventListener('mouseleave',this.close)
+    }
+  },
+  destroyed(){  
+    if(this.trigger === 'click'){
+      this.$refs.popover.removeEventListener('click',this.onClick)
+    } else {
+      this.$refs.popover.removeEventListener('mouseenter',this.open)
+      this.$refs.popover.removeEventListener('mouseleave',this.close)
+    }
   },
   methods: {
     PositionContent() {
       //popover弹出层位置
       const { contentWrapper, triggerWrapper } = this.$refs;
       document.body.appendChild(this.$refs.contentWrapper);
-      const { width, height, top, left } = triggerWrapper.getBoundingClientRect();
+      const { width, height, top, left } =
+        triggerWrapper.getBoundingClientRect();
       const { height: height2 } = contentWrapper.getBoundingClientRect();
       let position = {
         top: {
@@ -56,8 +112,8 @@ export default {
           left: left + window.scrollX + width,
         },
       };
-      contentWrapper.style.left = position[this.position].left + 'px'
-      contentWrapper.style.top = position[this.position].top + 'px'
+      contentWrapper.style.left = position[this.position].left + "px";
+      contentWrapper.style.top = position[this.position].top + "px";
     },
     onClickDocument(e) {
       if (
@@ -113,6 +169,7 @@ $border-radius: 4px;
   position: absolute;
   border: 1px solid $border-color;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  background: white;
   padding: 0.5em 1em;
   max-width: 20em;
   &::before,
@@ -132,10 +189,12 @@ $border-radius: 4px;
       left: 10px;
     }
     &::before {
+      border-bottom: none;
       border-top-color: black;
       top: 100%;
     }
     &::after {
+      border-bottom: none;
       border-top-color: white;
       top: calc(100% - 1px);
     }
@@ -147,10 +206,13 @@ $border-radius: 4px;
       left: 10px;
     }
     &::before {
+      border-top: none;
       border-bottom-color: black;
+      border-top: none;
       bottom: 100%;
     }
     &::after {
+      border-top: none;
       border-bottom-color: white;
       bottom: calc(100% - 1px);
     }
@@ -164,10 +226,13 @@ $border-radius: 4px;
       top: 50%;
     }
     &::before {
+      border-right: none;
+      border-right: none;
       border-left-color: black;
       left: 100%;
     }
     &::after {
+      border-right: none;
       border-left-color: white;
       left: calc(100% - 1px);
     }
@@ -180,10 +245,13 @@ $border-radius: 4px;
       top: 50%;
     }
     &::before {
+      border-left: none;
+      border-left: none;
       border-right-color: black;
       right: 100%;
     }
     &::after {
+      border-left: none;
       border-right-color: white;
       right: calc(100% - 1px);
     }
