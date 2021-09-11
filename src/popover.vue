@@ -6,7 +6,7 @@
       ref="contentWrapper"
       :class="{ [`position-${position}`]: true }"
     >
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWrapper" style="display: inline-block">
       <slot></slot>
@@ -244,7 +244,7 @@ $border-radius: 4px;
       transform: translateY(-50%);
       top: 50%;
     }
-    &::before {
+    &::before { 
       border-left: none;
       border-left: none;
       border-right-color: black;
