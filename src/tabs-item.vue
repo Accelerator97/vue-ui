@@ -35,7 +35,11 @@ export default {
   created() {
     if (this.eventBus) {
       this.eventBus.$on("update:selected", (name) => {
-        return this.active = name === this.name
+         if(this.name === name ){
+            return this.active = true
+          }else{
+            return this.active = false
+          }
       });
     }
   },
