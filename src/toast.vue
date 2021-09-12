@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="toastClasses">
+  <div class="g-toast-wrapper" :class="toastClasses">
     <div class="g-toast" ref="toast">
       <div class="g-message">
         <slot v-if="!enableHTML"></slot>
@@ -23,7 +23,9 @@ export default {
       type: [Boolean, Number],
       default: false,
       validator(value) {
-        return value === false || typeof value === "number";
+        if( value === false || typeof value === "number"){
+          return true
+        };
       },
     },
     closeButton: {
@@ -57,7 +59,7 @@ export default {
   mounted() {
     this.execautoClose();
     this.updateCss();
-    // console.log(this.autoCloseDelay)
+    // console.log(this.autoClose)
     // setTimeout(() => {
     //     console.log(this.$refs.toast.getBoundingClientRect().height);
     // }, 2000);
@@ -83,10 +85,10 @@ export default {
       this.$destroy();
     },
     onClickClose() {
-      this.close(); //先关闭自己
       if (this.closeButton && typeof this.closeButton.callback === "function") {
         this.closeButton.callback(); //调用用户传的回调
       }
+      this.close(); //先关闭自己
     },
   },
 };
@@ -124,7 +126,7 @@ $toast-background: rgba(0, 0, 0, 0.75);
     opacity: 100%;
   }
 }
-.wrapper {
+.g-toast-wrapper {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
