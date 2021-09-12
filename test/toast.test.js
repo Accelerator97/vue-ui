@@ -22,18 +22,19 @@ describe('Toast', () => {
     }).$mount(div)
     console.log(vm.$el);
     // vm.$on('close', () => {
-    //   console.log(vm.autoClose);
-    //   expect(document.body.contains(vm.$el)).to.eq(false)
+    //   // console.log(vm.autoClose);
+    //   console.log(vm.$el);
+    //   expect(document.body.contains(vm.$el)).to.eq(true)
     //   done()
     //   vm.$el.remove()
     //   vm.$destroy();
     //  })
     setTimeout(() => {
-      console.log(this.autoClose);
+      // console.log(this.autoClose);
       console.log(vm.$el);
       expect(document.body.contains(vm.$el)).to.eq(false)
       done()
-    }, 2000)
+    }, 1000)
     // vm.$nextTick(() => {
     //   expect(document.body.contains(vm.$el)).to.eq(false)
     //   done()

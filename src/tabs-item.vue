@@ -1,14 +1,7 @@
 <template>
-<<<<<<< HEAD
-    <div class="g-tabs-item" @click="xxx" :class="classes">
-        <slot></slot>
-        <div class="g-tabs-line" ref="line"></div>
-    </div>
-=======
   <div class="g-tabs-item" @click="onClick" :class="classes" :data-name="name">
     <slot></slot>
   </div>
->>>>>>> tabs
 </template>
 
 
@@ -59,21 +52,6 @@ export default {
 </script>
 
 <style lang="scss">
-<<<<<<< HEAD
-$tabs-blue:blue;
-.g-tabs-item{
-    padding: 0 1em;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    cursor: pointer;
-    &.active{
-        background: red;
-        color:$tabs-blue;
-        font-weight: bold;
-    }
-=======
 $tabs-blue: blue;
 $disable-text-color: #ddd;
 .g-tabs-item {
@@ -92,6 +70,5 @@ $disable-text-color: #ddd;
     color: $disable-text-color;
     cursor: not-allowed;
   }
->>>>>>> tabs
 }
 </style>
