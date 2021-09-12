@@ -46,9 +46,6 @@ new Vue({
         loading2: true,
         selectedTabs:'sports'
     },
-    mounted(){
-        this.$eventBus
-    },
 })
 
 

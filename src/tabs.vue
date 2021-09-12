@@ -32,12 +32,10 @@ export default {
     };
   },
   methods: {
-    checkChildren() {
-      if (this.$children.length === 0) {
-        console &&
-          console.warn &&
-          console.warn("tabs组件只能是tabs-body和tabs-header");
-      }
+    checkChildren(){
+    if (this.$children.length === 0) {
+      console && console.warn && console.warn('tabs组件只能是tabs-body和tabs-header')
+    }
     },
     selectTab() {
       this.$children.forEach((vm) => {
