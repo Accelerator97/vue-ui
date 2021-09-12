@@ -11,7 +11,13 @@ import Header from './header.vue'
 import Footer from './footer.vue'
 import Sider from './sider.vue'
 import Toast from './toast.vue'
-import plugin from './plugin'
+import plugin from './plugin.js'
+import Tabs from './tabs.vue'
+import TabsHeader from './tabs-header.vue'
+import TabsBody from './tabs-body.vue'
+import TabsItem from './tabs-item.vue'
+import TabsPane from './tabs-pane.vue'
+import Popover from './popover.vue'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -26,13 +32,21 @@ Vue.component('g-footer', Footer)
 Vue.component('g-sider', Sider)
 Vue.component('g-toast', Toast)
 Vue.use(plugin)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-pane', TabsPane)
+Vue.component('g-tabs-header', TabsHeader)
+Vue.component('g-popover', Popover)
 
 new Vue({
     el: '#app',
     data: {
         loading1: false,
         loading2: true,
+        selectedTabs:'sports'
     },
+<<<<<<< HEAD
     methods: {
         showToast1(){
             this.$toast(`你的aaaaaaaaaaaaaa智商：${parseInt(Math.random()*100)}`,{
@@ -63,6 +77,8 @@ new Vue({
             }) 
         },
     }
+=======
+>>>>>>> master
 })
 
 
