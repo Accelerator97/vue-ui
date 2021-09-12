@@ -10,21 +10,35 @@ describe('Toast', () => {
         expect(Toast).to.be.ok
     })
 
-    describe('props', ()=>{
-        it('接受autoClose', (done) => {
-            let div = document.createElement('div')
-            document.body.appendChild(div)
-            const Constructor = Vue.extend(Toast)
-            const vm = new Constructor({
-                propsData: {
-                    autoClose: 2
-                }
-            }).$mount(div)
-            vm.$on('close', () => {
-                expect(document.body.contains(vm.$el)).to.equal(false)
-                done()
-            })
-        })
+    it('接受 autoClose', (done) => {
+      let div = document.createElement('div')
+      document.body.appendChild(div)
+      const Constructor = Vue.extend(Toast)
+      const vm = new Constructor({
+        propsData: {
+          autoClose: 1,
+        }
+      }).$mount(div)
+      console.log(vm.$el);
+      // vm.$on('close', () => {
+      //   // console.log(vm.autoClose);
+      //   console.log(vm.$el);
+      //   expect(document.body.contains(vm.$el)).to.eq(true)
+      //   done()
+      //   vm.$el.remove()
+      //   vm.$destroy();
+      //  })
+      setTimeout(() => {
+        // console.log(this.autoClose);
+        console.log(vm.$el);
+        expect(document.body.contains(vm.$el)).to.eq(false)
+        done()
+      }, 1000)
+      // vm.$nextTick(() => {
+      //   expect(document.body.contains(vm.$el)).to.eq(false)
+      //   done()
+      // })
+    })
         it('可以接受closeButton', function (done) {
             let callback = sinon.fake()
             const Constructor = Vue.extend(Toast)
@@ -66,5 +80,4 @@ describe('Toast', () => {
             }).$mount()
             expect(vm.$el.classList.contains('position-bottom')).to.eq(true)
         })
-    })
 })
