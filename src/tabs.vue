@@ -43,8 +43,8 @@ export default {
           //子元素为tabs-header
           vm.$children.forEach((childVm) => {
             if (
-              childVm.$options.name === "gulu-tabs-item" && //孙元素为tabs-item
-              childVm.name === this.selected //孙元素被选中
+              childVm.$options.name === "gulu-tabs-item"  &&//孙元素为tabs-item
+               childVm.name === this.selected //孙元素被选中
             ) {
               this.eventBus.$emit("update:selected", this.selected, childVm);
             }

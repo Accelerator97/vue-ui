@@ -10,8 +10,8 @@ describe('Popover', () => {
         expect(Popover).to.be.ok
     })
 
-    it('可以设置position',(done)=>{
-        Vue.component('g-popover',Popover)
+    it('可以设置position', (done) => {
+        Vue.component('g-popover', Popover)
         const div = document.createElement('div')
         document.body.appendChild(div)
         div.innerHTML = `
@@ -22,18 +22,18 @@ describe('Popover', () => {
           <button>点我</button>
        </g-popover>`
 
-       const vm = new Vue({
-           el:div
-       })
-       vm.$nextTick(()=>{
-           vm.$el.querySelector('button').click()
-           vm.$nextTick(()=>{
-               expect(vm.$refs.a.$refs.contentWrapper.classList.contains('position-bottom')).to.be.true
-               done()
-           })
+        const vm = new Vue({
+            el: div
+        })
+        vm.$nextTick(() => {
+            vm.$el.querySelector('button').click()
+            vm.$nextTick(() => {
+                expect(vm.$refs.a.$refs.contentWrapper.classList.contains('position-bottom')).to.be.true
+                done()
+            })
 
-       })
-       
+        })
+
     })
 
 

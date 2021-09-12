@@ -20,26 +20,14 @@ describe('Toast', () => {
         autoClose: 1,
       }
     }).$mount(div)
-    console.log(vm.$el);
-    // vm.$on('close', () => {
-    //   // console.log(vm.autoClose);
-    //   console.log(vm.$el);
-    //   expect(document.body.contains(vm.$el)).to.eq(true)
-    //   done()
-    //   vm.$el.remove()
-    //   vm.$destroy();
-    //  })
-    setTimeout(() => {
-      // console.log(this.autoClose);
-      console.log(vm.$el);
-      expect(document.body.contains(vm.$el)).to.eq(false)
-      done()
-    }, 1000)
-    // vm.$nextTick(() => {
-    //   expect(document.body.contains(vm.$el)).to.eq(false)
-    //   done()
-    // })
+    vm.$on('close', () => {
+        expect(document.body.contains(vm.$el)).to.eq(false)
+        done()
+        vm.$el.remove()
+        vm.$destroy();
+     })
   })
+
   it('接受 closeButton', (done) => {
     const callback = sinon.fake();
     const Constructor = Vue.extend(Toast)
@@ -47,7 +35,7 @@ describe('Toast', () => {
       propsData: {
         closeButton: {
           text: '关闭吧',
-          callback,
+          callback
         },
       }
     }).$mount()
@@ -59,6 +47,7 @@ describe('Toast', () => {
       done()
     }, 1000);
   })
+
   it('接受 enableHTML', () => {
     const Constructor = Vue.extend(Toast)
     const vm = new Constructor({
@@ -69,6 +58,7 @@ describe('Toast', () => {
     let strong = vm.$el.querySelector('#test')
     expect(strong).to.exist
   })
+
   it('接受 position', () => {
     const Constructor = Vue.extend(Toast)
     const vm = new Constructor({
