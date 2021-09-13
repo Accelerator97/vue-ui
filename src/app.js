@@ -18,6 +18,8 @@ import TabsBody from './tabs-body.vue'
 import TabsItem from './tabs-item.vue'
 import TabsPane from './tabs-pane.vue'
 import Popover from './popover.vue'
+import Collapse from './collapse.vue'
+import CollapseItem from './collapse-item.vue'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -38,13 +40,15 @@ Vue.component('g-tabs-item', TabsItem)
 Vue.component('g-tabs-pane', TabsPane)
 Vue.component('g-tabs-header', TabsHeader)
 Vue.component('g-popover', Popover)
+Vue.component('g-collapse', Collapse)
+Vue.component('g-collapse-item',CollapseItem)
 
 new Vue({
     el: '#app',
     data: {
         loading1: false,
         loading2: true,
-        selectedTabs:'sports'
+        selectedTabs:["1","2"]
     },
 })
 
