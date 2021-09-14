@@ -1,7 +1,7 @@
 <template>
   <button
     class="g-button"
-    :class="{ [`icon-${iconPosition}`]: true }"
+    :class="{ [`theme-${theme}`]: theme }"
     @click="$emit('click')"
   >
     <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
@@ -13,30 +13,26 @@
 </template>
 
 <script>
-import Icon from "./icon";
 export default {
-  name:"gulu-button",
-  components: {
-    "g-icon": Icon,
-  },
+  name: "gulu-button",
   props: {
-    icon: {},
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-    iconPosition: {
-      type: String,
-      default: "left",
-      validaor(value) {
-        return value === "left" || value === "right";
-      },
+    theme: {
+      type: String, //不让用设置默认值
     },
   },
 };
 </script>
 
 <style lang="scss">
+$font-size: 4px;
+$button-height: 32px;
+$button-bg: white;
+$button-active-bg: #eee;
+$border-radius: 4px;
+$color: #333;
+$border-color: #999;
+$border-color-hover: #666;
+$blue:#40a9ff;
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -46,21 +42,21 @@ export default {
   }
 }
 .g-button {
-  font-size: var(--font-size);
-  height: var(--button-height);
+  font-size: $font-size;
+  height: $button-height;
   padding: 0 1em;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  background: $button-bg;
   display: inline-flex; //转为弹性盒模型
   justify-content: center;
   align-items: center;
   vertical-align: middle;
   &:hover {
-    border-color: var(--border-color-hover);
+    border-color: $border-color-hover;
   }
   &:active {
-    background-color: var(--button-active-bg);
+    background-color: $button-active-bg;
   }
   &:focus {
     outline: none;
@@ -72,19 +68,26 @@ export default {
     order: 1;
     margin-right: 0.1em;
   }
-  &.icon-right {
-    > .content {
-      order: 1;
-      margin-right: 0.1em;
-    }
-    > .icon {
-      order: 2;
-      margin-right: 0;
-      margin-left: 0.1em;
-    }
-  }
   .loading {
     animation: spin 1s infinite linear;
+  }
+  &.g-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+  }
+  &.g-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
   }
 }
 </style>

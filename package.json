@@ -6,7 +6,9 @@
   "scripts": {
     "dev-test1": "parcel watch test/* --no-cache",
     "dev-test2": "karma start",
-    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -26,10 +28,13 @@
     "chai-spies": "^1.0.0",
     "git-open": "^2.1.0",
     "icon.vue": "^0.1.5",
+    "node-sass": "^4.11.0",
     "postcss": "^8.3.6",
     "sass": "^1.39.0",
+    "tar": "^6.1.11",
     "vue": "^2.6.14",
-    "vue-hot-reload-api": "^2.3.4"
+    "vue-hot-reload-api": "^2.3.4",
+    "vuepress-plugin-demo-container": "^0.2.0"
   },
   "devDependencies": {
     "@parcel/transformer-vue": "^2.0.0-beta.2",
@@ -45,9 +50,11 @@
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^9.1.1",
     "parcel-bundler": "^1.12.5",
+    "sass-loader": "^7.1.0",
     "sinon": "^11.1.2",
     "sinon-chai": "^3.7.0",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "vuepress": "^1.8.2"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"

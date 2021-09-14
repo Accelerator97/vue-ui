@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
 export default {
   name: "gulu-collapse-item",
   props: {
