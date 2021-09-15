@@ -28,13 +28,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    iconPosition: {
-      type: String,
-      default: "left",
-      validaor(value) {
-        return value === "left" || value === "right";
-      },
-    },
     theme: {
       type: String,
     },
@@ -108,17 +101,6 @@ $grey: grey;
   }
   .loading {
     animation: spin 1s infinite linear;
-  }
-  &.icon-right {
-    //如果有icon-right属性，则icon在后 文字在前
-    > .content {
-      order: 1;
-    }
-    > .icon {
-      order: 2;
-      margin-right: 0.1em;
-      margin-left: 0;
-    }
   }
   &[disabled] {
     cursor: not-allowed;
