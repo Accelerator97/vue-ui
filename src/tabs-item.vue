@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style lang="scss">
-$tabs-blue: blue;
+$tabs-blue: #409aed;
 $disable-text-color: #ddd;
 .g-tabs-item {
   padding: 0 1em;

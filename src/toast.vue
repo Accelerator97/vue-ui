@@ -1,12 +1,12 @@
 <template>
-  <div class="wrapper" :class="toastClasses">
+  <div class="g-toastWrapper" :class="toastClasses" ref="toastWrapper">
     <div class="g-toast" ref="toast">
-      <div class="g-message">
+      <div class="g-toast-message">
         <slot v-if="!enableHTML"></slot>
         <div v-else v-html="$slots.default[0]"></div>
       </div>
 
-      <div class="g-line" ref="line"></div>
+      <div class="g-line" ref="line" v-show="closeButton"></div>
       <!-- 写成 <slot></slot>，不要写成<slot /> 不然下面的标签内容加载不出来 -->
       <span v-if="closeButton" class="g-close" @click="onClickClose">
         {{ closeButton.text }}
@@ -21,18 +21,25 @@ export default {
   props: {
     autoClose: {
       type: [Boolean, Number],
-      default: false,
+      default: 5,
       validator(value) {
         return value === false || typeof value === "number";
       },
     },
     closeButton: {
       type: Object,
-      default() {
-        return {
-          text: "关闭",
-          callback: undefined,
-        };
+      validator(val) {
+        let flag = true;
+        for (let key of Object.keys(val)) {
+          if (!["text", "callback"].includes(key)) {
+            flag = false;
+            break;
+          }
+        }
+        if (flag) {
+          val["text"] = val["text"] || "关闭";
+        }
+        return flag;
       },
     },
     enableHTML: {
@@ -46,6 +53,13 @@ export default {
         return ["top", "bottom", "middle"].indexOf(value) >= 0;
       },
     },
+    zIndex: {
+      type: Number,
+      default: 20,
+      validator(value) {
+        return typeof value === "number";
+      },
+    },
   },
   computed: {
     toastClasses() {
@@ -55,6 +69,7 @@ export default {
     },
   },
   mounted() {
+    this.$refs.toastWrapper.style.zIndex = this.zIndex;
     this.execautoClose();
     this.updateCss();
     // console.log(this.autoCloseDelay)
@@ -124,11 +139,12 @@ $toast-background: rgba(0, 0, 0, 0.75);
     opacity: 100%;
   }
 }
-.wrapper {
+.g-toastWrapper {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   $animation-duration: 1s;
+
   &.position-top {
     top: 0;
     .g-toast {
@@ -162,7 +178,7 @@ $toast-background: rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   color: white;
   padding: 0 16px;
-  .g-message {
+  .g-toast-message {
     padding: 8px 0;
   }
   .g-close {

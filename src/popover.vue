@@ -168,6 +168,7 @@ $border-radius: 4px;
 .g-popover-content-wrapper {
   position: absolute;
   border: 1px solid $border-color;
+  border-radius: $border-radius;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   background: white;
   padding: 0.5em 1em;

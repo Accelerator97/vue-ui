@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="{ error: error }">
+  <div class="wrapper" :class="{ error }">
     <input
       :value="value"
       type="text"
@@ -44,16 +44,6 @@ export default {
 </script>
 
 <style lang="scss" >
-// html {
-//     --button-height: 32px;
-//     --font-size: 14px;
-//     --button-bg: white;
-//     --button-active-bg: #eee;
-//     --border-radius: 4px;
-//     --color: #333;
-//     --border-color: #999;
-//     --border-color-hover: #666;
-// }
 $height: 32px;
 $border-color: #999;
 $border-color-hover: #666;
@@ -86,6 +76,11 @@ $red: #f1453d;
       border-color: #bbb;
       color: #bbb;
       cursor: not-allowed;
+    }
+  }
+  &.error{
+    .g-input{
+      border-color:$red;
     }
   }
   .icon-error {

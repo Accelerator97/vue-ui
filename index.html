@@ -27,18 +27,49 @@
         body {
             font-size: var(--font-size);
         }
+
+        .g-row {
+            margin-bottom: 20px;
+        }
+
+        .g-col {
+            border-radius: 4px;
+        }
+
+        .bg-dark {
+            background: #99a9bf;
+        }
+
+        .bg-green {
+            background: #81d2ad
+        }
+
+        .grid-content {
+            text-align: center
+        }
     </style>
 </head>
 
 
 <body>
-    <div id="app" style="margin:50px 50px 50px 50px">
-           <g-collapse :selected.sync="selectedTabs" single>
-               <g-collapse-item title="标题1" name="1">内容1</g-collapse-item>
-               <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
-               <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
-           </g-collapse>
-        {{selectedTabs}}
+    <div id="app">
+        <g-tabs :selected.sync="selectedTab">
+            <g-tabs-header>
+              <g-tabs-item name='tab1'>Tab1</g-tabs-item>
+              <g-tabs-item name='tab2'>Tab2</g-tabs-item>
+              <g-tabs-item name='tab3'>Tab3</g-tabs-item>
+              <g-tabs-item name='tab4'>Tab4</g-tabs-item>
+            </g-tabs-header>
+            <g-tabs-body>
+              <g-tabs-pane name='tab1'>内容1</g-tabs-pane>
+              <g-tabs-pane name='tab2'>内容2</g-tabs-pane>
+              <g-tabs-pane name='tab3'>内容3</g-tabs-pane>
+              <g-tabs-pane name='tab4'>内容4</g-tabs-pane>
+            </g-tabs-body>
+          </g-tabs>
+      
+          <div style="margin-top:20px">选中的标签是:{{selectedTab}}</div>
+          </div>
     </div>
     <script src="./src/app.js"></script>
 </body>

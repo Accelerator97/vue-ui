@@ -56,6 +56,9 @@ export default {
   mounted() {
     this.checkChildren();
     this.selectTab()
+    this.eventBus.$on("update:selected", (vm)=>{
+        this.$emit('update:selected', vm);
+    })
   },
 };
 </script>

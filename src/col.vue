@@ -1,6 +1,6 @@
 <template>
   <div class="g-col" :class="colClass" :style="this.gutter && colStyle">
-    <slot />
+    <slot></slot>
   </div>
 </template>
 
@@ -78,7 +78,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@use "sass:math";
+// @use "sass:math";
 .g-col {
   // height: 100px;
   // //   background: grey;
@@ -88,14 +88,14 @@ export default {
   $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
-      width: math.div($n, 24) * 100%;
+      width: ($n / 24) * 100%;
     }
   }
 
   $class-prefix: offset-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
-      margin-left: math.div($n, 24) * 100%;
+      margin-left:($n / 24)  * 100%;
     }
   }
 
@@ -103,14 +103,14 @@ export default {
     $class-prefix: col-ipad-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        width: math.div($n, 24) * 100%;
+        width: ($n / 24)  * 100%;
       }
     }
 
     $class-prefix: offset-ipad-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        margin-left: math.div($n, 24) * 100%;
+        margin-left:($n / 24)  * 100%;
       }
     }
   }
@@ -118,14 +118,14 @@ export default {
     $class-prefix: col-narrow-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        width: math.div($n, 24) * 100%;
+        width:($n / 24)  * 100%;
       }
     }
 
     $class-prefix: offset-narrow-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        margin-left: math.div($n, 24) * 100%;
+        margin-left: ($n / 24)  * 100%;
       }
     }
   }
@@ -133,14 +133,14 @@ export default {
     $class-prefix: col-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        width: math.div($n, 24) * 100%;
+        width: ($n / 24)  * 100%;
       }
     }
 
     $class-prefix: offset-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        margin-left: math.div($n, 24) * 100%;
+        margin-left:($n / 24)  * 100%;
       }
     }
   }
@@ -148,14 +148,14 @@ export default {
     $class-prefix: col-wide-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        width: math.div($n, 24) * 100%;
+        width:($n / 24)  * 100%;
       }
     }
 
     $class-prefix: offset-wide-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        margin-left: math.div($n, 24) * 100%;
+        margin-left: ($n / 24)  * 100%;
       }
     }
   }
