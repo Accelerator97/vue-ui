@@ -18,11 +18,11 @@
       <g-button>hover显示popover</g-button>
     </g-popover>
 </template>
-
 ```
 :::
 
 # 2.支持position
+
 :::demo 可选择的参数为 top , left , right , bottom ,分别设置 popover 显示的方位。
 ```html
 <template>
@@ -51,7 +51,6 @@
       <g-button>右边popover</g-button>
     </g-popover>
 </template>
-
 ```
 :::
 

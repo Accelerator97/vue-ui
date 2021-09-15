@@ -165,6 +165,7 @@ export default {
 span是指网格占据的列数，从数值1-24等分划分
 
 ## 3.2支持offset
+
 ::: demo 设置 offset 属性,可以将列向右侧偏。
 ```html
 <template>
@@ -256,6 +257,7 @@ export default {
 </style>
 ```
 :::
+
 <style>
 table th:first-of-type {
     width: 10%;
@@ -274,10 +276,16 @@ table th:nth-of-type(5) {
 }
 </style>
 
-# Attributes
+# Row Attributes
 | 参数        | 说明           | 类型      | 可选值     | 默认值 |
 | -----------   | ------------ | -------   | ---------- | ------ |
 | gutter    | 列之间的间距           | String/Number   | true/false | false  | 
 | align    | 列的排版       | Boolean   | String | center/right/left  |
+
+
+
+# Col Attributes
+| 参数        | 说明           | 类型      | 可选值     | 默认值 |
+| -----------   | ------------ | -------   | ---------- | ------ |
 | span       | 列的宽度   | String/Number    |            |        |
 | offset       | 列向右偏移   | String/Number     |            |        |

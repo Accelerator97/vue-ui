@@ -1,4 +1,5 @@
 module.exports = {
+    base:"/vue-ui/",
     title: '咕噜UI',
     description: '一个简易的UI框架',
     plugins:['demo-container'],

@@ -2,6 +2,7 @@
 
  # 1.支持theme
 
+
 ::: demo 通过设置 theme 属性，展示不同类型的按钮
 ```html
 <template>
@@ -40,6 +41,7 @@
 :::
 
 # 4.支持loading
+
 ::: demo 通过设置 loading 属性,确定是否加载中
 ```html
 <template>
@@ -50,6 +52,7 @@
 :::
 
 # 5.按钮组
+
 ::: demo 以按钮组的方式出现，常用于多项类似操作
 ```html
 <template>

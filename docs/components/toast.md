@@ -123,16 +123,16 @@ table th:first-of-type {
     width: 10%;
 }
 table th:nth-of-type(2) {
-    width: 60%;
+    width: 70;
 }
 table th:nth-of-type(3) {
-    width: 10%;
+    width: 4%;
 }
 table th:nth-of-type(4) {
     width: 10%;
 }
 table th:nth-of-type(5) {
-    width: 10%;
+    width: 6%;
 }
 
 </style>
@@ -141,6 +141,6 @@ table th:nth-of-type(5) {
 | ----------- | -------------------------------- | -------------- | ----------------- | ------ |
 | zIndex      | 层叠等级                         | Number         |                   | 20     |
 | autoClose   | 自动关闭                         | Boolean/Number |                   | 5      |
-| closeButton | 执行传入回调、文本编辑 | Object         |                   |        |
+| closeButton | 关闭执行传入的回调、关闭文本编辑 | Object         |                   |        |
 | enableHTML  | 识别HTML标签                     | Boolean        | true/false        | false  |
 | position    | 弹出的位置                       | String         | top/middle/bottom | top    |

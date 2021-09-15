@@ -24,7 +24,10 @@ export default {
 ```
 :::
 
+
 # 2.支持single
+
+
 :::demo 通过设置 single 属性，一次只能同时显示一个面板内容
 ```html
 <template>

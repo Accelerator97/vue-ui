@@ -40,7 +40,9 @@
 ```
 :::
 
+
 # 2.支持disabled
+
 
 :::demo tabs-item 设置disabled 不可选中
 ```html
@@ -76,21 +78,22 @@
 ```
 :::
 
+
 <style>
 table th:first-of-type {
     width: 10%;
 }
 table th:nth-of-type(2) {
-    width: 40%;
+    width: 50%;
 }
 table th:nth-of-type(3) {
     width: 10%;
 }
 table th:nth-of-type(4) {
-    width: 20%;
+    width: 15%;
 }
 table th:nth-of-type(5) {
-    width: 20%;
+    width: 15%;
 }
 </style>
 # Tabs Attributes
@@ -99,14 +102,14 @@ table th:nth-of-type(5) {
 | selected | 绑定值，选中tabsItem和tabsPane的 name | string |        |        |
 
 # TabsItem Attributes
-| 参数     | 说明                                               | 类型    | 可选值 | 默认值 |
-| -------- | -------------------------------------------------- | ------- | ------ | ------ |
-| name     | 与Tabs绑定值 selected 对应的标识符，表示选项卡别名 | String  |        |
-| disabled | 禁用                                               | Boolean | false/true  | false|
+| 参数     | 说明                                               | 类型    | 可选值     | 默认值 |
+| -------- | -------------------------------------------------- | ------- | ---------- | ------ |
+| name     | 与Tabs绑定值 selected 对应的标识符，表示选项卡别名 | String  |            |
+| disabled | 禁用                                               | Boolean | false/true | false  |
 
 
 # TabsPane Attributes
-| 参数 | 说明                                                 | 类型   | 可选值 | 默认值 |
-| ---- | ---------------------------------------------------- | ------ | ------ | ------ |
+| 参数 | 说明                                               | 类型   | 可选值 | 默认值 |
+| ---- | -------------------------------------------------- | ------ | ------ | ------ |
 | name | 与Tabs绑定值 selected 对应的标识符，表示选项卡别名 | String |        |
    

@@ -25,6 +25,7 @@ export default {
 :::
 
 # 2.支持disabled
+
 ::: demo 设置disabled，禁用输入
 ```html
 <template>
@@ -34,6 +35,7 @@ export default {
 :::
 
 # 3.支持readonly
+
 ::: demo 设置readonly，表示只读无法修改
 ```html
 <template>
@@ -43,6 +45,7 @@ export default {
 :::
 
 # 4.支持error
+
 ::: demo 添加 error 属性，会在该 input 右侧显示一个提示图标与文字，用于提示
 ```html
 <template>
