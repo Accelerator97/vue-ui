@@ -30,7 +30,7 @@ module.exports = {
         ],
         nav: [
             { text: '主页', link: '/' },
-            { text: '文档', link: '/components/' },
+            { text: '文档', link: '/install/' },
             { text: '交流', link: 'https://github.com/Accelerator97/vue-ui' },
         ]
     }
