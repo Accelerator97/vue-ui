@@ -1,5 +1,5 @@
 module.exports = {
-    base:"/vue-ui/",
+    base:"./vue-ui/",
     title: 'GALA UI',
     description: '一个简易的UI框架',
     plugins:['demo-container'],
