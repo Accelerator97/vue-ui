@@ -33,7 +33,8 @@
     "tar": "^6.1.11",
     "vue": "^2.6.14",
     "vue-hot-reload-api": "^2.3.4",
-    "vuepress-plugin-demo-container": "^0.2.0"
+    "vuepress-plugin-demo-container": "^0.2.0",
+    "vuepress-plugin-serve": "^2.0.4"
   },
   "devDependencies": {
     "@parcel/transformer-vue": "^2.0.0-beta.2",
