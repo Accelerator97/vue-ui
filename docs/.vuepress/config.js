@@ -1,6 +1,6 @@
 module.exports = {
     base:"/vue-ui/",
-    title: '咕噜UI',
+    title: 'GALA UI',
     description: '一个简易的UI框架',
     plugins:['demo-container'],
     sidebarDepth: 1,
@@ -31,7 +31,7 @@ module.exports = {
         nav: [
             { text: '主页', link: '/' },
             { text: '文档', link: '/guide/' },
-            { text: '交流', link: 'https://google.com' },
+            { text: '交流', link: 'https://github.com/Accelerator97/vue-ui' },
         ]
     }
 

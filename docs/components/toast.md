@@ -35,7 +35,7 @@
 ::: demo 设置closeButton,编辑气泡框右边的文本，并且执行传入的回调函数。
 ```html
 <template>
-    <button @click="clickClose">点击才关闭</button>
+    <button @click="clickClose">点击关闭</button>
 </template>    
 
 <script>

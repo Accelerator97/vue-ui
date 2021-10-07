@@ -1,6 +1,6 @@
 {
-  "name": "ben-test-1",
-  "version": "0.0.2",
+  "name": "gala-vue2ui",
+  "version": "1.0.0",
   "description": "UI框架",
   "main": "dist/index.js",
   "scripts": {
